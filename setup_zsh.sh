@@ -111,9 +111,9 @@ EOL
 
     # Update plugins line in .zshrc
     if grep -q "^plugins=" "$HOME/.zshrc"; then
-        sed -i '' 's/^plugins=(.*)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting history-substring-search autojump)/' "$HOME/.zshrc"
+        sed -i '' 's/^plugins=(.*)/plugins=(git gh zsh-autosuggestions zsh-syntax-highlighting history-substring-search autojump)/' "$HOME/.zshrc"
     else
-        echo 'plugins=(git zsh-autosuggestions zsh-syntax-highlighting history-substring-search autojump)' >> "$HOME/.zshrc"
+        echo 'plugins=(git gh zsh-autosuggestions zsh-syntax-highlighting history-substring-search autojump)' >> "$HOME/.zshrc"
     fi
 
     # Add autojump configuration if not present

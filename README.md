@@ -18,10 +18,14 @@ This repository contains a script to automatically set up a powerful Zsh environ
 The script installs and configures the following plugins:
 
 1. **git** - Better Git integration and aliases
-2. **zsh-autosuggestions** - Fish-like autosuggestions for commands
-3. **zsh-syntax-highlighting** - Fish-like syntax highlighting for commands
-4. **history-substring-search** - Type part of command and use ↑/↓ to search
-5. **autojump** - Smart directory jumping (use `j` command)
+   - Enhanced Git autocompletion
+   - Repository status information
+   - Useful Git aliases
+2. **gh** - GitHub CLI integration and autocompletion
+3. **zsh-autosuggestions** - Fish-like autosuggestions for commands
+4. **zsh-syntax-highlighting** - Fish-like syntax highlighting for commands
+5. **history-substring-search** - Type part of command and use ↑/↓ to search
+6. **autojump** - Smart directory jumping (use `j` command)
 
 ## Installation
 
@@ -48,6 +52,12 @@ The script installs and configures the following plugins:
 
 ## What Gets Configured
 
+### Git & GitHub Integration
+- Full Git command completion through Oh My Zsh git plugin
+- GitHub CLI (gh) command completion through gh plugin
+- Useful Git aliases (check Oh My Zsh git plugin documentation for full list)
+- Repository status information in prompt
+
 ### Spaceship Theme Configuration
 - Minimal and clean prompt
 - Shows username, directory, and hostname
@@ -58,10 +68,16 @@ The script installs and configures the following plugins:
 
 ### Plugin Features
 
-#### Git Plugin
-- Enhanced Git commands and aliases
+#### Git & GitHub Features
+- Enhanced Git commands and aliases through Oh My Zsh
 - Repository status in prompt
-- Auto-completion for Git commands
+- Full Git and GitHub CLI autocompletion
+- Common Git operations simplified with aliases:
+  - `gst` for git status
+  - `ga` for git add
+  - `gcm` for git commit
+  - `gp` for git push
+  - And many more!
 
 #### Autosuggestions
 - As you type, you'll see suggested commands in gray
