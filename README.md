@@ -53,6 +53,13 @@ The script installs and configures the following plugins:
 ## What Gets Configured
 
 ### Git & GitHub Integration
+- Interactive Git user configuration:
+  - Prompts for Git username and email if not set
+  - Skips if already configured
+- Global Git configurations:
+  - Automatic upstream tracking setup
+  - Rebase-based pull strategy
+  - Push to current branch by default
 - Full Git command completion through Oh My Zsh git plugin
 - GitHub CLI (gh) command completion through gh plugin
 - Useful Git aliases (check Oh My Zsh git plugin documentation for full list)

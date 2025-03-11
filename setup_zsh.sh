@@ -6,6 +6,39 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Function to configure Git settings
+configure_git() {
+    echo -e "\nConfiguring Git settings..."
+
+    # Check if Git user name is configured
+    if [ -z "$(git config --global user.name)" ]; then
+        echo -n "Enter your Git username: "
+        read -r git_username
+        git config --global user.name "$git_username"
+    else
+        echo -e "${GREEN}✓ Git username already configured${NC}"
+    fi
+
+    # Check if Git email is configured
+    if [ -z "$(git config --global user.email)" ]; then
+        echo -n "Enter your Git email: "
+        read -r git_email
+        git config --global user.email "$git_email"
+    else
+        echo -e "${GREEN}✓ Git email already configured${NC}"
+    fi
+
+    # Configure Git defaults
+    echo "Setting up Git defaults..."
+    # Set up automatic upstream tracking
+    git config --global push.default current
+    git config --global push.autoSetupRemote true
+    # Configure pull to rebase by default
+    git config --global pull.rebase true
+
+    echo -e "${GREEN}✓ Git configured successfully${NC}"
+}
+
 echo "Checking for Command Line Tools..."
 
 # Check if Command Line Tools are installed
@@ -36,6 +69,9 @@ if ! command -v brew &>/dev/null; then
 else
     echo -e "${GREEN}✓ Homebrew is already installed${NC}"
 fi
+
+# Call configure_git function before Oh My Zsh setup
+configure_git
 
 echo -e "\nChecking for Oh My Zsh installation..."
 
